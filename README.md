@@ -13,7 +13,7 @@ This repository serves as a comprehensive toolkit for researchers and practition
 
 
 ## **Dependencies**
-
+Python 3.6 or later versions are recommended. The version of dependencies may vary depending on the Python version.
 - [Numpy](https://pypi.org/project/numpy/)
 - [Pandas](https://pypi.org/project/pandas/)
 - [Argparse](https://pypi.org/project/argparse/)
