@@ -1,0 +1,52 @@
+#Number of replca
+NUM_REPLICA	16
+
+#The file list
+FILE_LIST	flist
+
+#compute multiple params in matrix other than sencondary structures; temps seperated with ','
+FILE_MATRIX     fmatrix 300
+
+#The Temperature file
+TEMPERATURES	rex.cond
+
+#Number of bins for energy; default 100
+NUM_BINS	200
+
+#Maximal steps to compute the statistical inefficiency
+#The stastitical inefficiency quantifies the auto-correlation in the 
+#record trajectory for the analysis; default 100
+#The time is sampled at the step of 1+i(i-1)/2, with i=1,2,3,,MAX
+MAX_STEPS       1
+MAX_PARAM_STEPS 1
+
+#tolerance to evaluate the convergence; default 0.0001
+TOLERANCE       0.00001
+
+#The output temperatures
+MIN_TEMP	275
+MAX_TEMP	425
+TEMP_BINS	150
+
+#CV output
+CV_OUT		cv.dat
+
+#compute the statistical uncertainty of the cv_output
+DELTA_CV        YES
+
+#compute the statistical mean pf the params
+AVE_PARAM       YES
+#compute the statistical uncertainty of the parameters
+DELTA_PARAM	NO
+
+#input dssp files to compute 2ndst, 2ndst name:helix,betasheet,turn,unstr
+DSSP	YES
+#compute residue-wise 2ndst content
+RESISTRU	YES 300
+
+#compute PMF_1D: param_i,param_j,...  bin_i,bin_j,... temp_i,temp_j,...
+PMF1D	rg,dist,helix,unstr,betasheet,turn    50,50,72,72,50,50   300,300,300,300,350,360
+#compute PMF_2D: param_i,param_j/param_x,param_y/...  bin_i,binj/bin_x,bin_y/... temp_ij/temp_xy/...
+PMF2D	rg,dist/rg,betasheet   50,50/50,72  300,335
+#note that the secondary structure names in wham.py are 'helix','betasheet','turn','unstr'. 
+
